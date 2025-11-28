@@ -1,0 +1,26 @@
+{
+  "name": "homepage-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "projectType": "application",
+    "sourceRoot": "apps/homepage-e2e/src",
+    "implicitDependencies": [
+      "homepage"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/playwright:playwright",
+        "outputs": [
+          "{workspaceRoot}/dist/.playwright/apps/homepage-e2e"
+        ],
+        "options": {
+          "config": "apps/homepage-e2e/playwright.config.ts"
+        }
+      },
+      "lint": {
+        "executor": "@nx/eslint:lint"
+      }
+    }
+  }
+}
