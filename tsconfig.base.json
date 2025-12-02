@@ -30,6 +30,10 @@
     "strict": true,
     "target": "es2022",
     "verbatimModuleSyntax": false,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "header/Module": ["apps/header/src/remote-entry.ts"],
+      "search/Module": ["apps/search/src/remote-entry.ts"]
+    }
   }
 }

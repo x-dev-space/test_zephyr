@@ -1,0 +1,26 @@
+{
+  "name": "search-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "projectType": "application",
+    "sourceRoot": "apps/search-e2e/src",
+    "implicitDependencies": [
+      "search"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/playwright:playwright",
+        "outputs": [
+          "{workspaceRoot}/dist/.playwright/apps/search-e2e"
+        ],
+        "options": {
+          "config": "apps/search-e2e/playwright.config.ts"
+        }
+      },
+      "lint": {
+        "executor": "@nx/eslint:lint"
+      }
+    }
+  }
+}

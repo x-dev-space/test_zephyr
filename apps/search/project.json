@@ -1,0 +1,74 @@
+{
+  "name": "search",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/search/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/apps/search",
+        "index": "apps/search/src/index.html",
+        "main": "apps/search/src/main.ts",
+        "tsConfig": "apps/search/tsconfig.app.json",
+        "rspackConfig": "apps/search/rspack.config.ts",
+        "assets": ["apps/search/src/favicon.ico", "apps/search/src/assets"]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false,
+          "rspackConfig": "apps/search/rspack.config.prod.ts"
+        }
+      },
+      "dependsOn": ["^build", "typecheck"]
+    },
+    "serve": {
+      "executor": "@nx/rspack:module-federation-dev-server",
+      "options": {
+        "buildTarget": "search:build:development",
+        "port": 4202
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "search:build:production"
+        }
+      },
+      "dependsOn": ["typecheck"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "executor": "@nx/rspack:module-federation-static-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "serveTarget": "search:serve"
+      },
+      "configurations": {
+        "development": {
+          "serveTarget": "search:serve:development"
+        },
+        "production": {
+          "serveTarget": "search:serve:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{projectRoot}/test-output/jest/coverage"],
+      "options": {
+        "jestConfig": "apps/search/jest.config.ts"
+      }
+    }
+  }
+}

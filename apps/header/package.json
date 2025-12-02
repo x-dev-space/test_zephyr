@@ -1,8 +1,8 @@
 {
-  "name": "@test-zephyr/homepage",
+  "name": "@test-zephyr/header",
   "version": "0.0.1",
   "private": true,
   "zephyr:dependencies": {
-    "header": "header@PROD"
+    "search": "search@PROD"
   }
 }

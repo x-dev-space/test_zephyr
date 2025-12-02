@@ -3,7 +3,7 @@
   "include": [],
   "references": [
     {
-      "path": "../header"
+      "path": "../search"
     },
     {
       "path": "./tsconfig.app.json"
