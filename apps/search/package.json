@@ -1,10 +1,5 @@
 {
-  "name": "@test-zephyr/search",
+  "name": "search",
   "version": "0.0.1",
-  "private": true,
-  "nx": {
-    "name": "search",
-    "projectType": "application",
-    "sourceRoot": "apps/search/src"
-  }
+  "private": true
 }

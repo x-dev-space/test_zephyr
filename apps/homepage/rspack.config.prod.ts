@@ -1,7 +1,7 @@
 import { composePlugins, withNx, withReact } from '@nx/rspack';
 import { withModuleFederation } from '@nx/module-federation/rspack';
 import { ModuleFederationConfig } from '@nx/module-federation';
-
+import {withZephyr} from 'zephyr-rspack-plugin';
 import baseConfig from './module-federation.config';
 
 const prodConfig: ModuleFederationConfig = {
@@ -23,7 +23,7 @@ const prodConfig: ModuleFederationConfig = {
    *   ['app2', 'http://example.com/path/to/app2/remoteEntry.js'],
    * ]
    */
-  remotes: [],
+  // remotes: [],
 };
 
 // Nx plugins for rspack to build config object from Nx options and context.
@@ -35,5 +35,6 @@ const prodConfig: ModuleFederationConfig = {
 export default composePlugins(
   withNx(),
   withReact(),
-  withModuleFederation(prodConfig, { dts: false })
+  withModuleFederation(prodConfig, { dts: false }),
+  withZephyr()
 );

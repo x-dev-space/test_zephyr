@@ -12,7 +12,7 @@ export function App() {
         </li>
       </ul>
       <Routes>
-        <Route path="/" element={<NxWelcome title="header" />} />
+        <Route path="/" element={<NxWelcome title="headerROOOOO" />} />
         <Route path="/search" element={<Search />} />
       </Routes>
     </div>
