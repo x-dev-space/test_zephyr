@@ -172,9 +172,17 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(encoding@0.1.13)(webpack@5.103.0(@swc/core@1.5.29(@swc/helpers@0.5.17)))
 
+  apps/header: {}
+
+  apps/header-e2e: {}
+
   apps/homepage: {}
 
   apps/homepage-e2e: {}
+
+  apps/search: {}
+
+  apps/search-e2e: {}
 
 packages:
 
